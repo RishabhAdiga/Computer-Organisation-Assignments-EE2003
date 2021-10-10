@@ -1,0 +1,17 @@
+---
+kind: pipeline
+name: test-a0
+type: docker
+
+steps:
+  - name: iverilog
+    image: nchandra75/iverilog
+    commands:
+      - iverilog -DTESTFILE=\"test_in.dat\" -o seq_mult seq_mult_tb.v seq_mult.v
+      - ./seq_mult
+
+trigger:
+    event:
+        - tag
+
+
