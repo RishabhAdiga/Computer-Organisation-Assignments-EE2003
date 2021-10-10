@@ -1,0 +1,3 @@
+seq_mult_synth.v
+seq_mult_tb.v
+/usr/share/yosys/xilinx/cells_sim.v

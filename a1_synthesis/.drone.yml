@@ -1,0 +1,18 @@
+---
+kind: pipeline
+name: test-a0
+type: docker
+
+steps:
+  - name: iverilog
+    image: nchandra75/synth
+    commands:
+      - yosys synth.ys
+      - iverilog -DTESTFILE=\"test_in.dat\" -o seq_mult -c program_file_synth.txt
+      - ./seq_mult
+
+trigger:
+    event:
+        - tag
+
+

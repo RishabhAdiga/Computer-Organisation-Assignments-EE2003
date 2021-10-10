@@ -1,0 +1,4 @@
+read_verilog seq_mult.v
+synth_xilinx -top seq_mult
+write_verilog seq_mult_synth.v
+
