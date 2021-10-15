@@ -1,0 +1,19 @@
+---
+kind: pipeline
+name: test-a2
+type: docker
+
+steps:
+  - name: riscv
+    image: nchandra75/riscv
+    commands:
+      - riscv32-unknown-elf-gcc -c fib.s 
+      - riscv32-unknown-elf-gcc -c runtest.s 
+      - riscv32-unknown-elf-ld runtest.o fib.o -o fib
+      - spike $RVPK fib
+
+trigger:
+    event:
+        - tag
+
+
