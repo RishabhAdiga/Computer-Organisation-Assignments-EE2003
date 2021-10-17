@@ -1,0 +1,12 @@
+---
+kind: pipeline
+name: test-a5
+type: docker
+steps:
+  - name: iverilog
+    image: nchandra75/iverilog
+    commands:
+      - ./run.sh
+trigger:
+    event:
+        - tag
