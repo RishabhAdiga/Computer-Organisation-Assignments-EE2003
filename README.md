@@ -21,7 +21,3 @@ This setup assumes that you like to keep your global .profile clean and would li
 DroneCI requires you to keep DRONE_TOKEN and DRONE_SERVER as ENV_VARS. Please add your DRONE_TOKEN credential to .envrc as:
 
     export DRONE_TOKEN=<insert token>
-
-Assignments
------------
-a1 - Sequential multiplier using verilog
